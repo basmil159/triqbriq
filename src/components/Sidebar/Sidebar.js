@@ -27,7 +27,7 @@ import {
 import { useLocation } from 'react-router-dom'
 
 const Sidebar = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(true)
   const { pathname } = useLocation()
 
   return (
