@@ -39,7 +39,7 @@ export const SidebarButton = styled.button`
   height: 4rem;
   width: 4rem;
   align-items: center;
-  border: none;
+  border: 1px solid rgb(245 245 245);
   justify-content: center;
   cursor: pointer;
   transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
