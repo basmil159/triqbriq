@@ -12,10 +12,12 @@ import {
   AddfilterTasks,
   Project,
   ProjectTitle,
+  Singlejob,
   StyleProjects,
 } from './projectsStyle'
 import filtericon from '../assets/img/filter.png'
 import { threedot } from '../assets'
+import watch from '../assets/img/stopwatch.png'
 import { IconSvg } from '../assets/styles'
 
 const queued = [
@@ -84,9 +86,17 @@ const Job = (props) => {
             <use xlinkHref={threedot}></use>
           </IconSvg>
         </ProjectTitle>
-        {queued.map((queue, index) => {
-          return <></>
-        })}
+        {props.jobDetails.map((job, index) => (
+          <>
+            <Singlejob>
+              <Heading3>{job.job}</Heading3>
+              <Mdtext weight='400'>
+                <img src={watch} alt='' />
+                {job.time}
+              </Mdtext>
+            </Singlejob>
+          </>
+        ))}
       </Project>
     </>
   )

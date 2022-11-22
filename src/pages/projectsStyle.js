@@ -60,7 +60,26 @@ export const ProjectTitle = styled.div`
 export const Singlejob = styled.div`
   padding: 2rem;
   background: #fcfcfc;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
   background: #fcfcfc;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+
+  :hover {
+    background: #0072bc;
+    color: #f5f5f5;
+  }
+
+  img {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 4px;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+  }
 `
