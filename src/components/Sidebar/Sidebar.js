@@ -1,0 +1,162 @@
+import React, { useState } from 'react'
+import {
+  brifcaseSVG,
+  energySVG,
+  smLogoSVG,
+  logoSVG,
+  materialSVG,
+  simulationSVG,
+  toolSVG,
+  arrowSVG,
+} from '../../assets'
+
+import { IconSvg } from '../../assets/styles'
+
+import triqbriqLogo from '../../assets/img/TRIQBRIQ.png'
+import {
+  Divider,
+  Links,
+  LinkContainer,
+  LinkIcon,
+  LinkLabel,
+  Logo,
+  StyleSidebar,
+  SidebarButton,
+} from './styles'
+
+import { useLocation } from 'react-router-dom'
+
+const Sidebar = () => {
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const { pathname } = useLocation()
+
+  return (
+    <StyleSidebar isOpen={sidebarOpen}>
+      <Logo>
+        <Links to='/triqbriq'>
+          {sidebarOpen ? (
+            <IconSvg height='4.6rem' width={!sidebarOpen ? '0rem' : '19rem'}>
+              <use xlinkHref={logoSVG}></use>
+            </IconSvg>
+          ) : (
+            <>
+              <IconSvg width='3.1rem' height='4.5rem'>
+                <use xlinkHref={smLogoSVG}></use>
+              </IconSvg>
+            </>
+          )}
+        </Links>
+        <>
+          <SidebarButton
+            isOpen={sidebarOpen}
+            onClick={() => setSidebarOpen((p) => !p)}
+          >
+            <IconSvg width='1.4rem' height='1.2rem'>
+              <use xlinkHref={arrowSVG}></use>
+            </IconSvg>
+          </SidebarButton>
+        </>
+      </Logo>
+
+      {linksArray.map(({ icon, label, to }) => (
+        <>
+          <LinkContainer key={label} isActive={pathname === to}>
+            <Links to={to}>
+              <LinkIcon isActive={pathname === to}>{icon}</LinkIcon>
+              {sidebarOpen && (
+                <>
+                  <LinkLabel isActive={pathname === to}>{label}</LinkLabel>
+                  {/* if notifications are at 0 or null, do not display */}
+                </>
+              )}
+            </Links>
+          </LinkContainer>
+          {label === 'Materials' ? <Divider /> : null}
+        </>
+      ))}
+
+      {secondaryLinksArray.map(({ icon, label }) => (
+        <LinkContainer
+          key={label}
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            position: 'absolute',
+            bottom: '4%',
+            boxShadow: 'none',
+            opacity: 0.8,
+          }}
+        >
+          <Links
+            to='/triqbriq'
+            style={
+              !sidebarOpen
+                ? { width: `50%`, justifyContent: 'center' }
+                : { justifyContent: 'center' }
+            }
+          >
+            <LinkIcon>{icon}</LinkIcon>
+          </Links>
+          {sidebarOpen && <LinkLabel>{label}</LinkLabel>}
+        </LinkContainer>
+      ))}
+    </StyleSidebar>
+  )
+}
+
+const linksArray = [
+  {
+    label: 'Projects',
+    icon: (
+      <IconSvg fill='#ffffff'>
+        <use xlinkHref={brifcaseSVG}></use>
+      </IconSvg>
+    ),
+    to: '/triqbriq',
+  },
+  {
+    label: 'Tools',
+    icon: (
+      <IconSvg fill='#ffffff'>
+        <use xlinkHref={toolSVG}></use>
+      </IconSvg>
+    ),
+    to: '/triqbriq/tools',
+  },
+  {
+    label: 'Materials',
+    icon: (
+      <IconSvg fill='#ffffff'>
+        <use xlinkHref={materialSVG}></use>
+      </IconSvg>
+    ),
+    to: '/triqbriq/materials',
+  },
+  {
+    label: 'Energy',
+    icon: (
+      <IconSvg fill='#ffffff'>
+        <use xlinkHref={energySVG}></use>
+      </IconSvg>
+    ),
+    to: '/triqbriq/energy',
+  },
+  {
+    label: 'Simulation',
+    icon: (
+      <IconSvg fill='#ffffff'>
+        <use xlinkHref={simulationSVG}></use>
+      </IconSvg>
+    ),
+    to: '/triqbriq/simulation',
+  },
+]
+
+const secondaryLinksArray = [
+  {
+    label: '© 2022, All rights reserved by ARRTSM',
+    icon: <img src={triqbriqLogo} alt='' />,
+  },
+]
+
+export default Sidebar
