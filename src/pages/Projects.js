@@ -10,6 +10,7 @@ import {
 import addicon from '../assets/img/add.png'
 import {
   AddfilterTasks,
+  DateTime,
   Loading,
   LoadingPath,
   Processing,
@@ -17,11 +18,14 @@ import {
   ProjectTitle,
   Singlejob,
   StyleProjects,
+  Table,
   Task,
 } from './projectsStyle'
 import filtericon from '../assets/img/filter.png'
 import { threedot } from '../assets'
 import watch from '../assets/img/stopwatch.png'
+import bluewatch from '../assets/img/bluestopwatch.png'
+import calender from '../assets/img/calendar.png'
 import { IconSvg } from '../assets/styles'
 
 const queued = [
@@ -52,13 +56,13 @@ const initiated = [
     job: 'TriqBriq Project-11',
     time: 'Estimated Time: 15.5mins',
     item: ['BRIQ-30', 'BRIQ-60', 'BRIQ-240'],
-    done: [0, 10, 30],
+    done: [0, 50, 60],
   },
   {
     job: 'TriqBriq Project-10',
     time: 'Estimated Time: 15.5mins',
     item: ['BRIQ-30', 'BRIQ-60', 'BRIQ-240'],
-    done: [20, 40, 50],
+    done: [20, 60, 80],
   },
   {
     job: 'TriqBriq Project-9',
@@ -94,10 +98,12 @@ const Job = (props) => {
           <>
             <Singlejob>
               <Heading3>{job.job}</Heading3>
-              <Mdtext weight='400'>
-                <img src={watch} alt='' />
-                {job.time}
-              </Mdtext>
+              {!job.date ? (
+                <Mdtext weight='400'>
+                  <img src={watch} alt='' />
+                  {job.time}
+                </Mdtext>
+              ) : null}
 
               {job.done ? (
                 <Processing>
@@ -120,6 +126,40 @@ const Job = (props) => {
                     </Task>
                   ))}
                 </Processing>
+              ) : null}
+
+              {job.date ? (
+                <>
+                  <DateTime>
+                    <Mdtext weight='400'>
+                      <img src={bluewatch} alt='' />
+                      {job.time}
+                    </Mdtext>
+                    <Mdtext weight='400'>
+                      <img src={calender} alt='' />
+                      {job.date}
+                    </Mdtext>
+                  </DateTime>
+
+                  <Table>
+                    <tr>
+                      <th>Type</th>
+                      {job.item.map((items, index) => (
+                        <>
+                          <th>{items}</th>
+                        </>
+                      ))}
+                    </tr>
+                    <tr>
+                      <td>Qty</td>
+                      {job.quantity.map((quantities, index) => (
+                        <>
+                          <td>{quantities}</td>
+                        </>
+                      ))}
+                    </tr>
+                  </Table>
+                </>
               ) : null}
             </Singlejob>
           </>

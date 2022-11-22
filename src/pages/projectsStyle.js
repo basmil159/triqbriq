@@ -20,12 +20,13 @@ export const StyleProjects = styled.div`
 export const Project = styled.div`
   background: none;
   width: 33.33%;
-  max-height: 20vh;
   padding: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
   margin: 0;
+  height: 55vh;
+  overflow: auto;
 `
 
 export const ProjectTitle = styled.div`
@@ -33,6 +34,9 @@ export const ProjectTitle = styled.div`
   justify-content: space-between;
   align-items: center;
   align-content: center;
+  background: #efefef;
+  position: sticky;
+  top: 0;
 
   h2 {
     font-size: 2rem;
@@ -70,6 +74,13 @@ export const Singlejob = styled.div`
   :hover {
     background: #0072bc;
     color: #f5f5f5;
+
+    table {
+      color: #fff;
+      th {
+        color: #0072bc;
+      }
+    }
   }
 
   img {
@@ -107,4 +118,60 @@ export const Loading = styled.div`
   background: ${({ bg }) => bg};
   position: absolute;
   border-radius: 2rem;
+`
+export const DateTime = styled.div`
+  display: flex;
+  gap: 2rem;
+
+  span {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ),
+      #0072bc;
+    /* ARRTSM/Blue */
+    padding: 4px;
+    border: 1px solid #0072bc;
+    border-radius: 4px;
+    color: #0072bc;
+
+    :last-of-type {
+      background: linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0.9)
+        ),
+        #15d450;
+
+      color: #15d450;
+      border: 1px solid #15d450;
+    }
+  }
+
+  svg {
+    fill: #0072bc !important;
+  }
+`
+
+export const Table = styled.table`
+  border: 1px solid #eaeaea;
+  border-radius: 4px;
+  text-align: center;
+  color: #211c28b2;
+
+  th {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.9),
+        rgba(255, 255, 255, 0.9)
+      ),
+      #0072bc;
+  }
+  td,
+  th,
+  tr {
+    font-size: 1.3rem;
+    border: 1px solid #eaeaea;
+  }
 `

@@ -12,4 +12,6 @@ export const StyleMain = styled.main`
   padding: ${v.xlSpace};
   margin-left: 0;
   width: 100%;
+  height: 100vh;
+  overflow: hidden;
 `
