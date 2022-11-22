@@ -10,6 +10,8 @@ export const StyleSidebar = styled.div`
   background: ${lightTheme.bg};
   height: 100vh;
   padding: ${v.xlSpace};
+
+  overflow: hidden;
   position: relative;
 `
 
@@ -28,30 +30,37 @@ export const Logo = styled.div`
 export const SidebarButton = styled.button`
   ${smooth};
   display: flex;
+  position: absolute;
+  left: ${({ isOpen }) => (!isOpen ? `9.5rem` : `23.5rem `)};
+  top: 4rem;
+  z-index: 99;
+  border-radius: 50%;
+  background: ${lightTheme.bg};
+  height: 4rem;
+  width: 4rem;
   align-items: center;
   border: none;
   justify-content: center;
   cursor: pointer;
-  background: none;
   transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
 `
 
 export const Divider = styled.div`
   height: 1px;
   width: 100%;
-  background: ${lightTheme.bg3};
+  background: ${lightTheme.bg4};
   margin: ${v.lgSpace} 0;
 `
 
 export const LinkContainer = styled.div`
   ${smooth};
   background: ${({ theme, isActive }) =>
-    !isActive ? `transparent` : theme.bg3};
+    !isActive ? `transparent` : theme.bg4};
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 
   :hover {
-    box-shadow: inset 0 0 0 1px ${lightTheme.bg3};
+    box-shadow: inset 0 0 0 1px ${lightTheme.bg4};
   }
 `
 
@@ -63,6 +72,7 @@ export const Links = styled(Link)`
   color: inherit;
   font-weight: 400;
   font-size: 18px;
+  font-family: 'saira';
   padding: ${v.smSpace} 0;
 `
 
@@ -73,14 +83,14 @@ export const LinkIcon = styled.div`
   svg {
     height: 20px;
     width: 20px;
-    fill: ${({ isActive }) => (!isActive ? null : `#0072bc`)};
+    fill: ${({ isActive }) => (!isActive ? `#0072bc` : `#fff`)};
   }
 `
 
 export const LinkLabel = styled.span`
   display: block;
   flex: 1;
-  color: ${({ isActive }) => (!isActive ? '#ffffff' : `#0072bc`)};
+  color: ${({ isActive }) => (!isActive ? '#0072bc' : `#ffffff`)};
   width: max-content;
   margin-left: ${v.smSpace};
 `
