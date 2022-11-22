@@ -10,10 +10,14 @@ import {
 import addicon from '../assets/img/add.png'
 import {
   AddfilterTasks,
+  Loading,
+  LoadingPath,
+  Processing,
   Project,
   ProjectTitle,
   Singlejob,
   StyleProjects,
+  Task,
 } from './projectsStyle'
 import filtericon from '../assets/img/filter.png'
 import { threedot } from '../assets'
@@ -94,6 +98,29 @@ const Job = (props) => {
                 <img src={watch} alt='' />
                 {job.time}
               </Mdtext>
+
+              {job.done ? (
+                <Processing>
+                  {job.item.map((items, index) => (
+                    <Task>
+                      <Mdtext>{items}</Mdtext>
+                      <LoadingPath>
+                        <Loading
+                          width={`${job.done[index]}%`}
+                          bg={
+                            job.done[index] < 50
+                              ? 'red'
+                              : job.done[index] >= 50 && job.done[index] < 80
+                              ? '#009BFF'
+                              : '#15D450'
+                          }
+                        ></Loading>
+                      </LoadingPath>
+                      <Mdtext>{job.done[index]}</Mdtext>
+                    </Task>
+                  ))}
+                </Processing>
+              ) : null}
             </Singlejob>
           </>
         ))}

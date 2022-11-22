@@ -83,3 +83,28 @@ export const Singlejob = styled.div`
     align-items: center;
   }
 `
+
+export const Processing = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+`
+export const Task = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+`
+export const LoadingPath = styled.div`
+  width: 100%;
+  height: 0.8rem;
+  background: #80808066;
+  border-radius: 2rem;
+  position: relative;
+`
+export const Loading = styled.div`
+  width: ${({ width }) => width};
+  height: 0.8rem;
+  background: ${({ bg }) => bg};
+  position: absolute;
+  border-radius: 2rem;
+`
