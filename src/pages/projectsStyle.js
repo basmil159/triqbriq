@@ -81,12 +81,23 @@ export const Singlejob = styled.div`
         color: #0072bc;
       }
     }
+
+    .black {
+      display: none;
+    }
+    .white {
+      display: block;
+    }
   }
 
   img {
     width: 1.2rem;
     height: 1.2rem;
     margin-right: 4px;
+  }
+
+  .white {
+    display: none;
   }
 
   span {

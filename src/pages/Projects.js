@@ -24,6 +24,7 @@ import {
 import filtericon from '../assets/img/filter.png'
 import { threedot } from '../assets'
 import watch from '../assets/img/stopwatch.png'
+import whitewatch from '../assets/img/whitestopwatch.png'
 import bluewatch from '../assets/img/bluestopwatch.png'
 import calender from '../assets/img/calendar.png'
 import { IconSvg } from '../assets/styles'
@@ -100,7 +101,8 @@ const Job = (props) => {
               <Heading3>{job.job}</Heading3>
               {!job.date ? (
                 <Mdtext weight='400'>
-                  <img src={watch} alt='' />
+                  <img class='black' src={watch} alt='' />
+                  <img class='white' src={whitewatch} alt='' />
                   {job.time}
                 </Mdtext>
               ) : null}
