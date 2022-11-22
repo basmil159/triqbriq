@@ -18,7 +18,7 @@ export const StyleSidebar = styled.div`
 export const Logo = styled.div`
   ${smooth};
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   img {
     max-width: 100%;
     height: auto;
@@ -67,6 +67,7 @@ export const LinkContainer = styled.div`
 export const Links = styled(Link)`
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   text-decoration: none;
   color: inherit;
