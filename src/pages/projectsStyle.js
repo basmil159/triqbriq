@@ -114,7 +114,7 @@ export const Processing = styled.div`
 export const Task = styled.div`
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
 `
 export const LoadingPath = styled.div`
   width: 100%;

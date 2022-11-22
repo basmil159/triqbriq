@@ -117,14 +117,14 @@ const Job = (props) => {
                           width={`${job.done[index]}%`}
                           bg={
                             job.done[index] < 50
-                              ? 'red'
+                              ? '#808080'
                               : job.done[index] >= 50 && job.done[index] < 80
                               ? '#009BFF'
                               : '#15D450'
                           }
                         ></Loading>
                       </LoadingPath>
-                      <Mdtext>{job.done[index]}</Mdtext>
+                      <Mdtext>{job.done[index]}%</Mdtext>
                     </Task>
                   ))}
                 </Processing>
