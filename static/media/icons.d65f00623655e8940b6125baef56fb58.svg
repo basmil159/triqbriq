@@ -34,5 +34,18 @@
 <path d="M12.6 0L14 1.4L9.425 6L14 10.6L12.6 12L6.6 6L12.6 0ZM6 0L7.4 1.4L2.825 6L7.4 10.6L6 12L0 6L6 0Z" fill="white"/>
 </symbol>
 
+<symbol id="search" width="20" height="20" fill='none' viewBox="0 0 20 20" >
+<g clip-path="url(#clip0_311_43)">
+<path d="M8.75 16.25C12.8921 16.25 16.25 12.8921 16.25 8.75C16.25 4.60786 12.8921 1.25 8.75 1.25C4.60786 1.25 1.25 4.60786 1.25 8.75C1.25 12.8921 4.60786 16.25 8.75 16.25Z" stroke="#CDCDCD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M14.375 14.375L18.75 18.75" stroke="#CDCDCD" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_311_43">
+<rect width="20" height="20" fill="white"/>
+</clipPath>
+</defs>
+</symbol>
+
+
 
 </svg>
