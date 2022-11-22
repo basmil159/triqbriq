@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.js": "/triqbriq/static/js/main.bb0746af.js",
-    "static/media/logo.svg": "/triqbriq/static/media/logo.4da02ab8327b8f98c7f74673e34bd22f.svg",
-    "static/media/icons.svg": "/triqbriq/static/media/icons.27008a5322fd6314e866f82934bd14d0.svg",
+    "main.js": "/triqbriq/static/js/main.f9a21a22.js",
+    "static/media/logo.svg": "/triqbriq/static/media/logo.d978927f76109998de2f45e0a30046ac.svg",
+    "static/media/blackbox.png": "/triqbriq/static/media/blackbox.ba57c6d93e2745578c73.png",
+    "static/media/icons.svg": "/triqbriq/static/media/icons.f42d719f1dc715e1b13c7a5478dcb58c.svg",
     "index.html": "/triqbriq/index.html",
-    "main.bb0746af.js.map": "/triqbriq/static/js/main.bb0746af.js.map"
+    "main.f9a21a22.js.map": "/triqbriq/static/js/main.f9a21a22.js.map"
   },
   "entrypoints": [
-    "static/js/main.bb0746af.js"
+    "static/js/main.f9a21a22.js"
   ]
 }
