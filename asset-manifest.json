@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/triqbriq/static/js/main.a0fc2a3a.js",
+    "main.js": "/triqbriq/static/js/main.bb0746af.js",
     "static/media/logo.svg": "/triqbriq/static/media/logo.4da02ab8327b8f98c7f74673e34bd22f.svg",
-    "static/media/icons.svg": "/triqbriq/static/media/icons.d65f00623655e8940b6125baef56fb58.svg",
+    "static/media/icons.svg": "/triqbriq/static/media/icons.27008a5322fd6314e866f82934bd14d0.svg",
     "index.html": "/triqbriq/index.html",
-    "main.a0fc2a3a.js.map": "/triqbriq/static/js/main.a0fc2a3a.js.map"
+    "main.bb0746af.js.map": "/triqbriq/static/js/main.bb0746af.js.map"
   },
   "entrypoints": [
-    "static/js/main.a0fc2a3a.js"
+    "static/js/main.bb0746af.js"
   ]
 }
