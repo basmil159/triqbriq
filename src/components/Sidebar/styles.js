@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
 import { smooth, v } from '../../styles/variables'
+
 import { lightTheme } from '../../styles/theme'
 
 export const StyleSidebar = styled.div`
@@ -10,7 +11,6 @@ export const StyleSidebar = styled.div`
   background: ${lightTheme.bg};
   height: 100vh;
   padding: ${v.xlSpace};
-
   overflow: hidden;
   position: relative;
 `
@@ -30,19 +30,32 @@ export const Logo = styled.div`
 export const SidebarButton = styled.button`
   ${smooth};
   display: flex;
-  position: absolute;
-  left: ${({ isOpen }) => (!isOpen ? `9.5rem` : `23.5rem `)};
+  position: fixed;
+  left: ${({ isOpen }) => (!isOpen ? `9.8rem` : `23.7rem `)};
   top: 4rem;
-  z-index: 99;
+  z-index: 1;
   border-radius: 50%;
-  background: ${lightTheme.bg};
+  background: ${lightTheme.bgAlpha};
   height: 4rem;
   width: 4rem;
   align-items: center;
-  border: 1px solid rgb(245 245 245);
+  border: 1px solid #dadada;
   justify-content: center;
   cursor: pointer;
-  transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
+  border-radius: 50%;
+
+  :hover {
+    background: #0072bc;
+    border-color: ${lightTheme.bgAlpha};
+    
+    svg {
+      fill: ${lightTheme.bgAlpha};
+    }
+  }
+  svg {
+    transform: ${({ isOpen }) => (!isOpen ? `rotate(180deg)` : `initial`)};
+    fill: ${lightTheme.bg};
+  }
 `
 
 export const Divider = styled.div`
@@ -94,13 +107,4 @@ export const LinkLabel = styled.span`
   color: ${({ isActive }) => (!isActive ? '#0072bc' : `#ffffff`)};
   width: max-content;
   margin-left: ${v.smSpace};
-`
-
-export const LinkNotification = styled.div`
-  font-size: 14px;
-  padding: calc(${v.smSpace} / 2) ${v.smSpace};
-  border-radius: calc(${v.borderRadius} / 2);
-  background: ${lightTheme.primary};
-  color: white;
-  margin-right: ${v.mdSpace};
 `

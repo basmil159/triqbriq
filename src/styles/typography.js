@@ -38,6 +38,7 @@ export const Smtext = styled.span`
 
 export const Btns = styled.div`
   display: flex;
+  cursor: pointer;
   ${'' /* width: max-content; */}
   gap: 0.8rem;
   border-radius: ${v.borderRadius};

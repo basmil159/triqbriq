@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { lightTheme } from '../styles/theme'
 
 export const AddfilterTasks = styled.div`
   display: flex;
@@ -34,7 +35,7 @@ export const ProjectTitle = styled.div`
   justify-content: space-between;
   align-items: center;
   align-content: center;
-  background: #efefef;
+  background: ${lightTheme.bgAlpha};
   position: sticky;
   top: 0;
 

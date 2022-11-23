@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import {
   brifcaseSVG,
   energySVG,
@@ -36,25 +38,23 @@ const Sidebar = () => {
         isOpen={sidebarOpen}
         onClick={() => setSidebarOpen((p) => !p)}
       >
-        <IconSvg width='1.4rem' height='1.2rem'>
+        <IconSvg width='1.4rem' height='1.4rem'>
           <use xlinkHref={arrowSVG}></use>
         </IconSvg>
       </SidebarButton>
       <StyleSidebar isOpen={sidebarOpen}>
         <Logo>
-          <Links to='/triqbriq'>
-            {sidebarOpen ? (
-              <IconSvg height='4.6rem' width={!sidebarOpen ? '0rem' : '19rem'}>
-                <use xlinkHref={logoSVG}></use>
+          {sidebarOpen ? (
+            <IconSvg height='4.6rem' width={!sidebarOpen ? '0rem' : '19rem'}>
+              <use xlinkHref={logoSVG}></use>
+            </IconSvg>
+          ) : (
+            <>
+              <IconSvg width='3.1rem' height='4.5rem'>
+                <use xlinkHref={smLogoSVG}></use>
               </IconSvg>
-            ) : (
-              <>
-                <IconSvg width='3.1rem' height='4.5rem'>
-                  <use xlinkHref={smLogoSVG}></use>
-                </IconSvg>
-              </>
-            )}
-          </Links>
+            </>
+          )}
         </Logo>
 
         {linksArray.map(({ icon, label, to }) => (

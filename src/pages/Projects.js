@@ -1,5 +1,4 @@
-import React from 'react'
-import { useId } from 'react'
+import { React, useState } from 'react'
 import {
   Heading1,
   Heading3,
@@ -28,6 +27,7 @@ import whitewatch from '../assets/img/whitestopwatch.png'
 import bluewatch from '../assets/img/bluestopwatch.png'
 import calender from '../assets/img/calendar.png'
 import { IconSvg } from '../assets/styles'
+import Modal from '../components/Modal/Modal'
 
 const queued = [
   {
@@ -172,11 +172,20 @@ const Job = (props) => {
 }
 
 const Projects = () => {
+  const [openModal, setOpenModel] = useState('')
+
   return (
     <>
+      {openModal ? <Modal type={openModal} close={setOpenModel} /> : null}
+
       <Heading1>Projects</Heading1>
       <AddfilterTasks>
-        <Btns color='#fff' background='#082E6C' padding='1.2rem'>
+        <Btns
+          color='#fff'
+          background='#082E6C'
+          padding='1.2rem'
+          onClick={() => setOpenModel('add')}
+        >
           <img
             src={addicon}
             alt=''
