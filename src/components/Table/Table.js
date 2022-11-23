@@ -15,7 +15,8 @@ export const Table = (props) => {
     return (
       <div
         style={{
-          height: '60vh',
+          minHeight: '10vh',
+          maxHeight: 'calc(100vh - 28.1rem)',
           overflowY: 'auto',
           overflowX: 'hidden',
         }}

@@ -53,7 +53,7 @@ export const Material = () => {
   return (
     <>
       <Heading1>Materials</Heading1>
-      <section className='logs'>
+      <section>
         <Table
           list={currentItems}
           colName={colName}
