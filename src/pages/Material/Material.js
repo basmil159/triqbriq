@@ -68,7 +68,7 @@ export const Material = () => {
           color='#fff'
           background='#082E6C'
           padding='1.2rem'
-          onClick={() => setOpenModel('materials')}
+          onClick={() => setOpenModel('addMaterial')}
           style={{}}
         >
           <img
@@ -76,7 +76,7 @@ export const Material = () => {
             alt=''
             style={{ width: '1.6rem', height: '1.6rem' }}
           />
-          <Heading3>Add Project</Heading3>
+          <Heading3>Add Material</Heading3>
         </Btns>
       </div>
       <section>

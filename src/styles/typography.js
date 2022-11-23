@@ -38,6 +38,8 @@ export const Smtext = styled.span`
 
 export const Btns = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: 4.5rem;
   cursor: pointer;
   ${'' /* width: max-content; */}

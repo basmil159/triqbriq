@@ -34,6 +34,8 @@ export const ProjectTitle = styled.div`
   background: ${lightTheme.bgAlpha};
   position: sticky;
   top: 0;
+  margin: 0 auto;
+  width: 96%;
 
   h2 {
     font-size: 2rem;
@@ -64,6 +66,7 @@ export const ProjectsJobs = styled.div`
   width: 100%;
   padding: 0;
   display: flex;
+  align-items: center;
   flex-direction: column;
   gap: 2rem;
   margin: 0;
@@ -73,6 +76,7 @@ export const ProjectsJobs = styled.div`
 `
 export const Singlejob = styled.div`
   padding: 2rem;
+  width: 96%;
   background: #fcfcfc;
   display: flex;
   flex-direction: column;

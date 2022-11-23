@@ -96,78 +96,77 @@ const Job = (props) => {
           </IconSvg>
         </ProjectTitle>
         <ProjectsJobs>
+          {props.jobDetails.map((job, index) => (
+            <>
+              <Singlejob>
+                <Heading3>{job.job}</Heading3>
+                {!job.date ? (
+                  <Mdtext weight='400'>
+                    <img class='black' src={watch} alt='' />
+                    <img class='white' src={whitewatch} alt='' />
+                    {job.time}
+                  </Mdtext>
+                ) : null}
 
-        {props.jobDetails.map((job, index) => (
-          <>
-            <Singlejob>
-              <Heading3>{job.job}</Heading3>
-              {!job.date ? (
-                <Mdtext weight='400'>
-                  <img class='black' src={watch} alt='' />
-                  <img class='white' src={whitewatch} alt='' />
-                  {job.time}
-                </Mdtext>
-              ) : null}
+                {job.done ? (
+                  <Processing>
+                    {job.item.map((items, index) => (
+                      <Task>
+                        <Mdtext>{items}</Mdtext>
+                        <LoadingPath>
+                          <Loading
+                            width={`${job.done[index]}%`}
+                            bg={
+                              job.done[index] < 50
+                                ? '#808080'
+                                : job.done[index] >= 50 && job.done[index] < 80
+                                ? '#009BFF'
+                                : '#15D450'
+                            }
+                          ></Loading>
+                        </LoadingPath>
+                        <Mdtext>{job.done[index]}%</Mdtext>
+                      </Task>
+                    ))}
+                  </Processing>
+                ) : null}
 
-              {job.done ? (
-                <Processing>
-                  {job.item.map((items, index) => (
-                    <Task>
-                      <Mdtext>{items}</Mdtext>
-                      <LoadingPath>
-                        <Loading
-                          width={`${job.done[index]}%`}
-                          bg={
-                            job.done[index] < 50
-                              ? '#808080'
-                              : job.done[index] >= 50 && job.done[index] < 80
-                              ? '#009BFF'
-                              : '#15D450'
-                          }
-                        ></Loading>
-                      </LoadingPath>
-                      <Mdtext>{job.done[index]}%</Mdtext>
-                    </Task>
-                  ))}
-                </Processing>
-              ) : null}
+                {job.date ? (
+                  <>
+                    <DateTime>
+                      <Mdtext weight='400'>
+                        <img src={bluewatch} alt='' />
+                        {job.time}
+                      </Mdtext>
+                      <Mdtext weight='400'>
+                        <img src={calender} alt='' />
+                        {job.date}
+                      </Mdtext>
+                    </DateTime>
 
-              {job.date ? (
-                <>
-                  <DateTime>
-                    <Mdtext weight='400'>
-                      <img src={bluewatch} alt='' />
-                      {job.time}
-                    </Mdtext>
-                    <Mdtext weight='400'>
-                      <img src={calender} alt='' />
-                      {job.date}
-                    </Mdtext>
-                  </DateTime>
-
-                  <Table>
-                    <tr>
-                      <th>Type</th>
-                      {job.item.map((items, index) => (
-                        <>
-                          <th>{items}</th>
-                        </>
-                      ))}
-                    </tr>
-                    <tr>
-                      <td>Qty</td>
-                      {job.quantity.map((quantities, index) => (
-                        <>
-                          <td>{quantities}</td>
-                        </>
-                      ))}
-                    </tr>
-                  </Table>
-                </>
-              ) : null}
-            </Singlejob>
-          </>
-        ))}
+                    <Table>
+                      <tr>
+                        <th>Type</th>
+                        {job.item.map((items, index) => (
+                          <>
+                            <th>{items}</th>
+                          </>
+                        ))}
+                      </tr>
+                      <tr>
+                        <td>Qty</td>
+                        {job.quantity.map((quantities, index) => (
+                          <>
+                            <td>{quantities}</td>
+                          </>
+                        ))}
+                      </tr>
+                    </Table>
+                  </>
+                ) : null}
+              </Singlejob>
+            </>
+          ))}
         </ProjectsJobs>
       </Project>
     </>
@@ -193,7 +192,7 @@ const Projects = () => {
           color='#fff'
           background='#082E6C'
           padding='1.2rem'
-          onClick={() => setOpenModel('add')}
+          onClick={() => setOpenModel('addProject')}
         >
           <img
             src={addicon}
