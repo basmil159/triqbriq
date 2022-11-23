@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 
+import { smooth, v } from './variables'
 export const GblStyle = createGlobalStyle`
     *, *::before, *::after {
         margin: 0;
@@ -33,13 +34,6 @@ export const GblStyle = createGlobalStyle`
   }
 }
 
-    ${
-      '' /* body {
-        background: ${({ theme }) => theme.bg2};
-        font-family: 'Roboto', sans-serif;
-        letter-spacing: .6px;
-    } */
-    }
 
     body {
   background-color: #021431;
@@ -47,6 +41,16 @@ export const GblStyle = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   font-family: DM Sans;
+}
+
+
+input{
+    padding: ${v.smSpace};
+    height: 4.1rem;
+    font-size: 1.6rem;
+    line-height: 2.1rem;
+    font-weight: 400;
+    color: inherit;
 }
 
 ::selection {

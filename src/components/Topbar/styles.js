@@ -30,16 +30,9 @@ export const Search = styled.div`
   input {
     border: 0px;
     border-radius: ${v.borderRadius};
-    background: ${({ theme }) => theme.bg2};
-    padding: ${v.smSpace};
-    height: 4rem;
-    line-height: 2.1rem;
     width: 100%;
     outline: none;
-    font-weight: 400;
-    font-size: 1.6rem;
     border: none;
-    color: inherit;
 
     :focus-within ~ label,
     :focus-visible ~ label {
