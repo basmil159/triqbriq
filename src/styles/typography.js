@@ -38,6 +38,7 @@ export const Smtext = styled.span`
 
 export const Btns = styled.div`
   display: flex;
+  height: 4.5rem;
   cursor: pointer;
   ${'' /* width: max-content; */}
   gap: 0.8rem;

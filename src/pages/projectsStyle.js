@@ -21,13 +21,9 @@ export const StyleProjects = styled.div`
 export const Project = styled.div`
   background: none;
   width: 33.33%;
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  margin: 0;
-  height: 55vh;
-  overflow: auto;
 `
 
 export const ProjectTitle = styled.div`
@@ -61,6 +57,19 @@ export const ProjectTitle = styled.div`
     justify-content: center;
     margin-left: 1.2rem;
   }
+`
+
+export const ProjectsJobs = styled.div`
+  background: none;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin: 0;
+  height: calc(100vh - 35rem);
+  overflow-y: auto;
+  overflow-x: visible;
 `
 export const Singlejob = styled.div`
   padding: 2rem;

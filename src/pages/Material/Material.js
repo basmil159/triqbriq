@@ -1,8 +1,9 @@
 import { React, useState } from 'react'
 import Pagination from '../../components/Pagination/Pagination'
 import { Table } from '../../components/Table/Table'
-import { Heading1 } from '../../styles/typography'
-
+import { Heading1, Heading3, Btns } from '../../styles/typography'
+import addicon from '../../assets/img/add.png'
+import Modal from '../../components/Modal/Modal'
 export const Material = () => {
   let list = [
     ['1', 'TRIQBRIQ_300_BALKEN', '-', '16.86', '5.22', '16.65', '22'],
@@ -28,6 +29,8 @@ export const Material = () => {
     'Quantity',
   ]
 
+  const [openModal, setOpenModel] = useState('')
+
   //   let pages = [1]
   // This state is for controlling the paginations
   const [currentPage, setCurrentPage] = useState(1)
@@ -52,7 +55,30 @@ export const Material = () => {
   }
   return (
     <>
-      <Heading1>Materials</Heading1>
+      {openModal ? <Modal type={openModal} close={setOpenModel} /> : null}
+      <div
+        style={{
+          display: 'flex',
+          aligmItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <Heading1>Materials</Heading1>
+        <Btns
+          color='#fff'
+          background='#082E6C'
+          padding='1.2rem'
+          onClick={() => setOpenModel('materials')}
+          style={{}}
+        >
+          <img
+            src={addicon}
+            alt=''
+            style={{ width: '1.6rem', height: '1.6rem' }}
+          />
+          <Heading3>Add Project</Heading3>
+        </Btns>
+      </div>
       <section>
         <Table
           list={currentItems}

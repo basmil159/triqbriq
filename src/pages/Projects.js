@@ -14,6 +14,7 @@ import {
   LoadingPath,
   Processing,
   Project,
+  ProjectsJobs,
   ProjectTitle,
   Singlejob,
   StyleProjects,
@@ -94,6 +95,8 @@ const Job = (props) => {
             <use xlinkHref={threedot}></use>
           </IconSvg>
         </ProjectTitle>
+        <ProjectsJobs>
+
         {props.jobDetails.map((job, index) => (
           <>
             <Singlejob>
@@ -165,6 +168,7 @@ const Job = (props) => {
             </Singlejob>
           </>
         ))}
+        </ProjectsJobs>
       </Project>
     </>
   )
@@ -179,6 +183,12 @@ const Projects = () => {
 
       <Heading1>Projects</Heading1>
       <AddfilterTasks>
+        <Btns color='#2B2E30' background='#ffffff' padding='1.2rem'>
+          <IconSvg width='1.2rem' height='.8rem'>
+            <use xlinkHref={filterSVG}></use>
+          </IconSvg>
+          <Heading3>Filter</Heading3>
+        </Btns>
         <Btns
           color='#fff'
           background='#082E6C'
@@ -191,12 +201,6 @@ const Projects = () => {
             style={{ width: '1.6rem', height: '1.6rem' }}
           />
           <Heading3>Add Project</Heading3>
-        </Btns>
-        <Btns color='#2B2E30' background='#ffffff' padding='1.2rem'>
-          <IconSvg width='1.2rem' height='.8rem'>
-            <use xlinkHref={filterSVG}></use>
-          </IconSvg>
-          <Heading3>Filter</Heading3>
         </Btns>
       </AddfilterTasks>
       <StyleProjects>
