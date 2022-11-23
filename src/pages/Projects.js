@@ -20,8 +20,7 @@ import {
   Table,
   Task,
 } from './projectsStyle'
-import filtericon from '../assets/img/filter.png'
-import { threedot } from '../assets'
+import { threedot, filterSVG } from '../assets'
 import watch from '../assets/img/stopwatch.png'
 import whitewatch from '../assets/img/whitestopwatch.png'
 import bluewatch from '../assets/img/bluestopwatch.png'
@@ -194,11 +193,9 @@ const Projects = () => {
           <Heading3>Add Project</Heading3>
         </Btns>
         <Btns color='#2B2E30' background='#ffffff' padding='1.2rem'>
-          <img
-            src={filtericon}
-            alt=''
-            style={{ width: '2.4rem', height: '2.4rem' }}
-          />
+          <IconSvg width='1.2rem' height='.8rem'>
+            <use xlinkHref={filterSVG}></use>
+          </IconSvg>
           <Heading3>Filter</Heading3>
         </Btns>
       </AddfilterTasks>
