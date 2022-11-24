@@ -119,7 +119,7 @@ const linksArray = [
         <use xlinkHref={brifcaseSVG}></use>
       </IconSvg>
     ),
-    to: '/triqbriq',
+    to: '/triqbriq/',
   },
   {
     label: 'Tools',
