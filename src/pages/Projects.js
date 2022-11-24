@@ -98,7 +98,12 @@ const Job = (props) => {
         <ProjectsJobs>
           {props.jobDetails.map((job, index) => (
             <>
-              <Singlejob>
+              <Singlejob
+                onClick={() => {
+                  props.project(job.job)
+                  props.model('viewproject')
+                }}
+              >
                 <Heading3>{job.job}</Heading3>
                 {!job.date ? (
                   <Mdtext weight='400'>
@@ -175,10 +180,13 @@ const Job = (props) => {
 
 const Projects = () => {
   const [openModal, setOpenModel] = useState('')
+  const [projectName, setProjectName] = useState('')
 
   return (
     <>
-      {openModal ? <Modal type={openModal} close={setOpenModel} /> : null}
+      {openModal && (
+        <Modal type={openModal} close={setOpenModel} project={projectName} />
+      )}
 
       <Heading1>Projects</Heading1>
       <AddfilterTasks>
@@ -203,9 +211,24 @@ const Projects = () => {
         </Btns>
       </AddfilterTasks>
       <StyleProjects>
-        <Job title='Queued' jobDetails={queued} />
-        <Job title='Initiated' jobDetails={initiated} />
-        <Job title='Completed' jobDetails={completed} />
+        <Job
+          title='Queued'
+          jobDetails={queued}
+          model={setOpenModel}
+          project={setProjectName}
+        />
+        <Job
+          title='Initiated'
+          jobDetails={initiated}
+          model={setOpenModel}
+          project={setProjectName}
+        />
+        <Job
+          title='Completed'
+          jobDetails={completed}
+          model={setOpenModel}
+          project={setProjectName}
+        />
       </StyleProjects>
     </>
   )

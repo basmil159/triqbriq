@@ -27,7 +27,7 @@ const Energy = () => {
     },
     {
       name: 'Tuesday',
-      day: 25,
+      day: 30,
     },
     {
       name: 'Wednesday',
@@ -35,15 +35,15 @@ const Energy = () => {
     },
     {
       name: 'Thurday',
-      day: 67,
+      day: 70,
     },
     {
       name: 'Friday',
-      day: 22,
+      day: 15,
     },
     {
       name: 'Saturday',
-      day: 42,
+      day: 37,
     },
     {
       name: 'Sunday',

@@ -36,7 +36,10 @@ export const ModalWrapper = styled.div`
   }
 `
 
-export const ModalContent = styled.div`
+export const ModalContent = styled.form.attrs({
+  action: '#',
+  method: 'get',
+})`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -82,7 +85,10 @@ export const ModelCancel = styled.button`
   font-size: 13px;
   color: #4a4a4a;
 `
-export const ModelAddEdit = styled.button`
+export const ModelAddEdit = styled.button.attrs({
+  type: 'submit',
+  value: 'Submit',
+})`
   border-radius: 4px;
   background: #0072bc;
   color: #f2fbff;
