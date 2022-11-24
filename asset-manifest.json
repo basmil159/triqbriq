@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.js": "/triqbriq/static/js/main.7e4b0711.js",
+    "main.js": "/triqbriq/static/js/main.789022ec.js",
     "static/media/logo.svg": "/triqbriq/static/media/logo.d978927f76109998de2f45e0a30046ac.svg",
     "static/media/briq.png": "/triqbriq/static/media/briq.4fd8af2beb01a4668127.png",
     "static/media/blackbox.png": "/triqbriq/static/media/blackbox.ba57c6d93e2745578c73.png",
     "static/media/icons.svg": "/triqbriq/static/media/icons.74c2a988d168b0a5ce155798bfe26f15.svg",
     "index.html": "/triqbriq/index.html",
-    "main.7e4b0711.js.map": "/triqbriq/static/js/main.7e4b0711.js.map"
+    "main.789022ec.js.map": "/triqbriq/static/js/main.789022ec.js.map"
   },
   "entrypoints": [
-    "static/js/main.7e4b0711.js"
+    "static/js/main.789022ec.js"
   ]
 }
