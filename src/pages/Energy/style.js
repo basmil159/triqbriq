@@ -9,11 +9,11 @@ export const EnergyCharts = styled.div`
   padding: 2.5rem 2rem;
   display: flex;
   gap: 2rem;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
 `
 export const EnergyLineChart = styled.div`
-  width: 66.8rem;
+  min-width: 66.8rem;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -32,13 +32,14 @@ export const EnergyLineChart = styled.div`
 
   .recharts-wrapper,
   svg {
-    width: 66.8rem !important;
-    height: 50vh !important;
+    width: 100% !important;
+    height: 100% !important;
   }
 
   .lineChart {
     display: flex;
     gap: 0rem;
+    min-width: 75rem;
     align-items: center;
 
     span {
@@ -49,12 +50,36 @@ export const EnergyLineChart = styled.div`
   }
 `
 export const Divider = styled.div`
-  border: 1px dashed #dadada;
+  border: 1px dotted #dadada;
   width: 0px;
-  height: 34.5rem;
-  margin-top: 5rem;
+  height: 37rem;
+  margin-top: 4rem;
 `
 
 export const EnergyBarChart = styled.div`
   margin-top: 4rem;
+  min-width: 31.5rem;
+  display: flex;
+  flex-wrap: nowrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  span {
+    color: #1e1e1e;
+  }
+`
+
+export const BarGraph = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  align-items: center;
+
+  svg {
+    width: 90%!impostant;
+    height: 90%!impostant;
+  }
 `

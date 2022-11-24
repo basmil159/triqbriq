@@ -1,6 +1,7 @@
 import React from 'react'
 import { Heading1, Heading3, Lgtext, Smtext } from '../../styles/typography'
 import {
+  BarGraph,
   Divider,
   EnergyBarChart,
   EnergyCharts,
@@ -96,7 +97,7 @@ const Energy = () => {
             </Lgtext>
             <div className='lineChart'>
               <Smtext>Electricity Conscumption (hundrend KWH)</Smtext>
-              <ResponsiveContainer width='100%' aspect={3}>
+              <ResponsiveContainer width='100%' aspect={2}>
                 <LineChart
                   width={500}
                   height={250}
@@ -114,26 +115,43 @@ const Energy = () => {
           </EnergyLineChart>
           <Divider />
           <EnergyBarChart>
-            <ResponsiveContainer width='100%' aspect={3}>
+            <Smtext
+              style={{
+                writingMode: 'vertical-rl',
+                transform: 'rotate(180deg)',
+                marginRight: '-3rem',
+              }}
+            >
+              Machines
+            </Smtext>
+            <BarGraph>
+              <Lgtext fontWeight='500' style={{ paddingLeft: '3rem' }}>
+                Energy consumption by each machine
+              </Lgtext>
+              {/* <ResponsiveContainer width='110%' aspect={2}> */}
               <ComposedChart
                 layout='vertical'
-                width={250}
-                height={200}
+                width={290}
+                height={250}
                 data={PerMachine}
                 margin={{
-                  top: 10,
-                  right: 350,
-                  bottom: 20,
-                  left: 0,
+                  top: 5,
+                  right: 5,
+                  bottom: -10,
+                  left: -20,
                 }}
               >
                 <CartesianGrid />
                 <XAxis type='number' />
                 <YAxis dataKey='name' type='category' scale='band' />
                 <Tooltip />
-                <Bar dataKey='power' barSize={20} fill='#413ea0' />
+                <Bar dataKey='power' barSize={30} fill='#0072bc' />
               </ComposedChart>
-            </ResponsiveContainer>
+              {/* </ResponsiveContainer> */}
+              <Smtext style={{ paddingLeft: '4rem' }}>
+                Electricity (hundrend KWH)
+              </Smtext>
+            </BarGraph>
           </EnergyBarChart>
         </EnergyCharts>
       </EnergyDiv>
