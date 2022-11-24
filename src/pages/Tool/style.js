@@ -17,7 +17,7 @@ export const ToolDiv = styled.section`
 export const ToolTopbar = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 2rem 0.5rem;
+  margin: 0 0.5rem;
   margin-bottom: 3.2rem;
   h1 {
     margin: 0;

@@ -29,9 +29,11 @@ export const Table = (props) => {
                   <TableTh key={index}>
                     <TableHeadFilter>
                       {header}
-                      <IconSvg width='1.2rem' height='.8rem'>
-                        <use xlinkHref={filterSVG}></use>
-                      </IconSvg>
+                      {props.type === 'tool' ? null : (
+                        <IconSvg width='1.2rem' height='.8rem'>
+                          <use xlinkHref={filterSVG}></use>
+                        </IconSvg>
+                      )}
                     </TableHeadFilter>
                   </TableTh>
                 ) : (
@@ -47,7 +49,11 @@ export const Table = (props) => {
       </div>
     )
   }
-  return <section className={props.args}>No Data found!!</section>
+  return (
+    <section style={{ color: 'red', fontSize: '1.6rem', textAlign: 'center' }}>
+      No Data found!!
+    </section>
+  )
 }
 export default Table
 

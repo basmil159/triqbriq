@@ -12,12 +12,12 @@ import {
 
 // Active tool Components
 const ActiveTool = (props) => {
-  return <Table list={props.list} colName={props.colName} />
+  return <Table list={props.list} colName={props.colName} type='tool' />
 }
 
 // In-active tool Components
 const InactiveTool = (props) => {
-  return <Table list={props.list} colName={props.colName} />
+  return <Table list={props.list} colName={props.colName} type='tool' />
 }
 
 export const Tools = () => {
@@ -120,7 +120,7 @@ export const Tools = () => {
         )}{' '}
         {/* Loads when clicked In-active Button  */}
         {/* Pagination Section for both Active and in active table  */}
-        {pages > 1 && (
+        {pages >= 1 && (
           <Pagination
             lastItem={firstItemindex + pageItem}
             firstItem={firstItemindex}
