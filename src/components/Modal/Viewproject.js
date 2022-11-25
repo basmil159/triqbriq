@@ -74,7 +74,7 @@ const Viewproject = (props) => {
         </ViewTable>
         <ModalFooter>
           <ModelCancel onClick={() => props.close('')}>Cancel</ModelCancel>
-          <ModelAddEdit>Add</ModelAddEdit>
+          <ModelAddEdit>Edit</ModelAddEdit>
         </ModalFooter>
       </ModalContent>
     </ModalWrapper>

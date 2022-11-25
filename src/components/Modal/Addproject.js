@@ -31,7 +31,7 @@ const Addproject = (props) => {
         <FormSection>
           <Heading3 fontWeight='400'>Project Name</Heading3>
           <input type='text' />
-          <Heading3 fontWeight='400'>Project Name</Heading3>
+          <Heading3 fontWeight='400'>Project Type</Heading3>
           <input type='text' />
         </FormSection>
         <MaterialsDiv>

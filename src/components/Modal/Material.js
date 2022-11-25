@@ -18,7 +18,7 @@ const Material = (props) => {
   return (
     <ModalWrapper>
       <ModalTitle>
-        <Heading2 fontWeight='500'>Add Project</Heading2>
+        <Heading2 fontWeight='500'>Add Materials</Heading2>
         <IconSvg
           width='1.8rem'
           height='1.8rem'
