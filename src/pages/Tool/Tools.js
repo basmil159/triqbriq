@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Pagination from '../../components/Pagination/Pagination'
 import Table from '../../components/Table/Table'
 import { Heading1 } from '../../styles/typography'
 import {
@@ -65,28 +64,6 @@ export const Tools = () => {
   const [showActiveTools, setShowActiveTools] = useState(true) //to load the specific table list in a button click i.e active/inactive
   const [selectList, setShowSelectList] = useState(Activelist) //to select the specific list to load in a button click i.e active/inactive
 
-  // This state is for controlling the paginations
-  const [currentPage, setCurrentPage] = useState(1)
-  const [itemsPerPage] = useState(10)
-
-  console.log(selectList)
-  // getting exact number of pages required
-  let totalItems = selectList.length
-  let pages = totalItems / itemsPerPage
-  if (totalItems % itemsPerPage !== 0 && pages > 1) {
-    pages = Math.trunc(pages + 1)
-  }
-  // getting current posts
-  const lastItemIndex = currentPage * itemsPerPage
-  const firstItemindex = lastItemIndex - itemsPerPage
-  const currentItems = selectList.slice(firstItemindex, lastItemIndex)
-  // getting exact number of items for last page
-  const pageItem = currentItems.length
-
-  const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber)
-  }
-
   return (
     <>
       <ToolDiv>
@@ -111,23 +88,10 @@ export const Tools = () => {
             </ToolBtnInactive>
           </ToolBtn>
         </ToolTopbar>
-        {showActiveTools && (
-          <ActiveTool list={currentItems} colName={colName} />
-        )}{' '}
+        {showActiveTools && <ActiveTool list={selectList} colName={colName} />}{' '}
         {/* Loads when clicked Active Button  */}
         {!showActiveTools && (
-          <InactiveTool list={currentItems} colName={colName} />
-        )}{' '}
-        {/* Loads when clicked In-active Button  */}
-        {/* Pagination Section for both Active and in active table  */}
-        {pages >= 1 && (
-          <Pagination
-            lastItem={firstItemindex + pageItem}
-            firstItem={firstItemindex}
-            totalItems={totalItems}
-            Pages={pages}
-            paginate={paginate}
-          />
+          <InactiveTool list={selectList} colName={colName} />
         )}
       </ToolDiv>
     </>

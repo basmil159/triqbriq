@@ -186,16 +186,14 @@ export const Table = styled.table`
   color: #211c28b2;
 
   th {
-    background: linear-gradient(
-        0deg,
-        rgba(255, 255, 255, 0.9),
-        rgba(255, 255, 255, 0.9)
-      ),
-      #0072bc;
+    background: #f5f5f5;
   }
+
+  ,
   td,
   th,
   tr {
+    border-collapse: collapse;
     font-size: 1.3rem;
     border: 1px solid #eaeaea;
   }

@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Heading3, Heading2 } from '../../styles/typography'
 import { IconSvg } from '../../assets/styles'
 import { crossSVG } from '../../assets'
