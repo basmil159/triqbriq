@@ -6,7 +6,7 @@ export const Heading1 = styled.h1`
   font-weight: 600;
   font-family: 'Saira', sans-serif;
   color: #211c28;
-  margin-bottom: 3.2rem;
+  margin-bottom: 2rem;
 `
 export const Heading2 = styled.h2`
   font-size: 2rem;

@@ -88,6 +88,7 @@ export const Singlejob = styled.div`
   :hover {
     background: #0072bc;
     color: #f5f5f5;
+    cursor: pointer;
 
     table {
       color: #fff;
