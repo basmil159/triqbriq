@@ -10,23 +10,19 @@ import {
   FormButton,
   FormTitle,
   FormContainer,
-  FormRemember,
-  FormRememberForgot,
   FormFooter,
 } from '../style'
 import { logoSVG } from '../../../assets'
 import { Link } from 'react-router-dom'
 import { IconSvg } from '../../../assets/styles'
 
-const Login = () => {
+const ResetPassword = () => {
   const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
     setEmail('')
-    setPassword('')
   }
 
   const formData = [
@@ -35,12 +31,6 @@ const Login = () => {
       value: email,
       onChange: (e) => setEmail(e.target.value),
       type: 'email',
-    },
-    {
-      label: 'Password',
-      value: password,
-      onChange: (e) => setPassword(e.target.value),
-      type: 'password',
     },
   ]
   return (
@@ -64,19 +54,11 @@ const Login = () => {
                   />
                 </FormInputRow>
               ))}
-              <FormRememberForgot>
-                <FormRemember>
-                  <input type='checkbox' id='rememberMe' />
-                  <label for='rememberMe'>Remember me</label>
-                </FormRemember>
 
-                <Link to='/triqbriq/resetpassword'>Forgot password?</Link>
-              </FormRememberForgot>
-              <FormButton type='submit'>Sign In</FormButton>
+              <FormButton type='submit'>Reset Password</FormButton>
             </FormWrapper>
             <FormFooter>
-              Don’t have an account yet?{' '}
-              <Link to='/triqbriq/signup'>Sign Up</Link>
+              <Link to='/triqbriq/login'>Back</Link>
             </FormFooter>
           </FormColumn>
         </FormRow>
@@ -85,4 +67,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default ResetPassword

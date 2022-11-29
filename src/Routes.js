@@ -5,7 +5,8 @@ import { Material } from './pages/Material/Material'
 import Energy from './pages/Energy/Energy'
 import { Tools } from './pages/Tool/Tools'
 import Login from './pages/Forms/Login/Login'
-import SignUp from './pages/Forms/SignUp/SignUp'
+import Signup from './pages/Forms/SignUp/SignUp'
+import ResetPassword from './pages/Forms/ResetPassword/ResetPassword'
 
 const Router = () => {
   return (
@@ -19,7 +20,8 @@ const Router = () => {
 
       <Route path='/triqbriq/login' element={<Login />} />
 
-      <Route path='/triqbriq/signup' element={<SignUp />} />
+      <Route path='/triqbriq/signup' element={<Signup />} />
+      <Route path='/triqbriq/resetpassword' element={<ResetPassword />} />
 
       <Route path='/triqbriq/reset-password' element={<Energy />} />
 

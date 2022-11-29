@@ -7,50 +7,37 @@ import {
   FormRow,
   FormLabel,
   FormInputRow,
-  FormMessage,
   FormButton,
   FormTitle,
+  FormContainer,
+  FormFooter,
 } from '../style'
-import validateForm from '../validateForm'
-import { useNavigate } from 'react-router-dom'
+import { logoSVG } from '../../../assets'
+import { Link } from 'react-router-dom'
+import { IconSvg } from '../../../assets/styles'
 
-const Login = () => {
+const Signup = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [confirmPass, setConfirmPass] = useState('')
-  const [error, setError] = useState(null)
-  const [success, setSuccess] = useState(null)
-  let navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const resultError = validateForm({ name, email, password, confirmPass })
 
-    if (resultError !== null) {
-      setError(resultError)
-      return
-    }
     setName('')
     setEmail('')
     setPassword('')
-    setConfirmPass('')
-    setError(null)
-    setSuccess('Application was submitted!')
-
-    setTimeout(() => {
-      navigate.push('/triqbriq')
-    })
-  }
-
-  const messageVariants = {
-    hidden: { y: 30, opacity: 0 },
-    animate: { y: 0, opacity: 1, transition: { delay: 0.2, duration: 0.4 } },
   }
 
   const formData = [
     {
-      label: 'Name',
+      label: 'First Name',
+      value: name,
+      onChange: (e) => setName(e.target.value),
+      type: 'text',
+    },
+    {
+      label: 'Last Name',
       value: name,
       onChange: (e) => setName(e.target.value),
       type: 'text',
@@ -67,19 +54,16 @@ const Login = () => {
       onChange: (e) => setPassword(e.target.value),
       type: 'password',
     },
-    {
-      label: 'Confirm Password',
-      value: confirmPass,
-      onChange: (e) => setConfirmPass(e.target.value),
-      type: 'password',
-    },
   ]
   return (
     <FormSection>
-      <div>
+      <FormContainer>
         <FormRow>
+          <IconSvg height='4.6rem'>
+            <use xlinkHref={logoSVG}></use>
+          </IconSvg>
           <FormColumn small>
-            <FormTitle>Sign up</FormTitle>
+            <FormTitle>Create Account</FormTitle>
             <FormWrapper onSubmit={handleSubmit}>
               {formData.map((el, index) => (
                 <FormInputRow key={index}>
@@ -93,32 +77,17 @@ const Login = () => {
                 </FormInputRow>
               ))}
 
-              <FormButton type='submit'>Signup</FormButton>
+              <FormButton type='submit'>Sign Up</FormButton>
             </FormWrapper>
-            {error && (
-              <FormMessage
-                variants={messageVariants}
-                initial='hidden'
-                animate='animate'
-                error
-              >
-                {error}
-              </FormMessage>
-            )}
-            {success && (
-              <FormMessage
-                variants={messageVariants}
-                initial='hidden'
-                animate='animate'
-              >
-                {success}
-              </FormMessage>
-            )}
+            <FormFooter>
+              Don’t have an account yet?{' '}
+              <Link to='/triqbriq/login'>Sign In</Link>
+            </FormFooter>
           </FormColumn>
         </FormRow>
-      </div>
+      </FormContainer>
     </FormSection>
   )
 }
 
-export default Login
+export default Signup

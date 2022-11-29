@@ -41,8 +41,9 @@ export const GblStyle = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   font-family: DM Sans;
-}
+  
 
+}
 
 input{
     padding: ${v.smSpace};
