@@ -70,6 +70,7 @@ export const ModalTitle = styled.div`
       rgba(255, 255, 255, 0.2)
     ),
     #0072bc;
+
   svg {
     cursor: pointer;
   }

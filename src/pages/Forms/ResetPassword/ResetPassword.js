@@ -41,7 +41,7 @@ const ResetPassword = () => {
             <use xlinkHref={logoSVG}></use>
           </IconSvg>
           <FormColumn small>
-            <FormTitle>Welcome back!</FormTitle>
+            <FormTitle>Recover password</FormTitle>
             <FormWrapper onSubmit={handleSubmit}>
               {formData.map((el, index) => (
                 <FormInputRow key={index}>
