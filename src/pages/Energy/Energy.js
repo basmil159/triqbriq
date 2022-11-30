@@ -89,10 +89,12 @@ const Energy = () => {
             <Lgtext>
               Time in
               <select>
-                <option value='week' selected>
-                  Week
+                <option value='day' selected>
+                  Day
                 </option>
+                <option value='week'>Week</option>
                 <option value='month'>Month</option>
+                <option value='year'>Year</option>
               </select>
             </Lgtext>
             <div className='lineChart'>

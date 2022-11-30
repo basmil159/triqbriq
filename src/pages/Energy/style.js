@@ -4,11 +4,14 @@ import { v } from '../../styles/variables'
 export const EnergyDiv = styled.div`
   border-radius: ${v.borderRadius};
   overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
 `
 export const EnergyCharts = styled.div`
   padding: 2.5rem 2rem;
   display: flex;
+  border-radius: 0 0 4px 4px;
   gap: 2rem;
+  background: #ffffff;
   align-items: start;
   justify-content: space-between;
 `
@@ -26,7 +29,9 @@ export const EnergyLineChart = styled.div`
     margin-left: 0.8rem;
     background: rgba(218, 218, 218, 0.5);
     border: 1px solid #808080;
+    line-height: 18px;
     border-radius: 2px;
+    padding: 0.4rem;
     outline: 0;
   }
 

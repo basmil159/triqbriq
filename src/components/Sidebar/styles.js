@@ -35,7 +35,7 @@ export const SidebarButton = styled.button`
   top: 4rem;
   z-index: 1;
   border-radius: 50%;
-  background: ${lightTheme.bgAlpha};
+  background: ${lightTheme.bg2};
   height: 4rem;
   width: 4rem;
   align-items: center;
@@ -47,7 +47,7 @@ export const SidebarButton = styled.button`
   :hover {
     background: #0072bc;
     border-color: ${lightTheme.bgAlpha};
-    
+
     svg {
       fill: ${lightTheme.bgAlpha};
     }
