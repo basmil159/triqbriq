@@ -72,4 +72,17 @@
 <path d="M4.66667 8H7.33333V6.66667H4.66667V8ZM0 0V1.33333H12V0H0ZM2 4.66667H10V3.33333H2V4.66667Z" />
 </symbol>
 
+
+<symbol id='leftArrow' width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_734_361)">
+<path d="M13.3332 7.33317H5.21984L8.9465 3.6065L7.99984 2.6665L2.6665 7.99984L7.99984 13.3332L8.93984 12.3932L5.21984 8.6665H13.3332V7.33317Z" fill="#0072BC"/>
+</g>
+<defs>
+<clipPath id="clip0_734_361">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</symbol>
+
+
 </svg>
