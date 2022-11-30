@@ -12,7 +12,7 @@ export const Heading2 = styled.h2`
   font-size: 2rem;
   font-weight: ${({ fontWeight }) => fontWeight};
   font-family: ${({ family }) => family};
-  line-height: 2.6rem;
+
   color: ${({ color }) => color};
 `
 
@@ -20,7 +20,6 @@ export const Heading3 = styled.h2`
   font-size: 1.6rem;
   font-weight: ${({ fontWeight }) => fontWeight};
   font-family: 'DM sans', sans-serif;
-  line-height: 2.1rem;
 `
 
 export const Lgtext = styled.span`

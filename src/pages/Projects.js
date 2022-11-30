@@ -148,24 +148,25 @@ const Job = (props) => {
                         {job.date}
                       </Mdtext>
                     </DateTime>
-
                     <Table>
-                      <tr>
-                        <th>Type</th>
-                        {job.item.map((items, index) => (
-                          <>
-                            <th>{items}</th>
-                          </>
-                        ))}
-                      </tr>
-                      <tr>
-                        <td>Qty</td>
-                        {job.quantity.map((quantities, index) => (
-                          <>
-                            <td>{quantities}</td>
-                          </>
-                        ))}
-                      </tr>
+                      <table cellspacing='0'>
+                        <tr>
+                          <th>Type</th>
+                          {job.item.map((items, index) => (
+                            <>
+                              <th>{items}</th>
+                            </>
+                          ))}
+                        </tr>
+                        <tr>
+                          <td>Qty</td>
+                          {job.quantity.map((quantities, index) => (
+                            <>
+                              <td>{quantities}</td>
+                            </>
+                          ))}
+                        </tr>
+                      </table>
                     </Table>
                   </>
                 ) : null}

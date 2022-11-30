@@ -1,6 +1,6 @@
 export const lightTheme = {
   bg: '#031432',
-  bgAlpha: '#F5F5F5',
+  bgAlpha: '#EAEAEA',
   bg2: '#FFFFFF',
   bg3: 'rgb(230,230,230)',
   bg4: '#082E6C',

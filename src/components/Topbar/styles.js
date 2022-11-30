@@ -20,7 +20,7 @@ export const StyleTopbar = styled.div`
   }
 `
 export const Search = styled.div`
-  width: 42.3rem;
+  width: 52.3rem;
   display: flex;
   position: relative;
   align-items: center;
@@ -33,7 +33,7 @@ export const Search = styled.div`
     width: 100%;
     outline: none;
     border: none;
-
+    background: #ffffff;
     :focus-within ~ label,
     :focus-visible ~ label {
       display: none;

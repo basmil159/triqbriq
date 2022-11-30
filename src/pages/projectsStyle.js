@@ -39,8 +39,8 @@ export const ProjectTitle = styled.div`
 
   h2 {
     font-size: 2rem;
-    line-height: 2.6rem;
     display: flex;
+    align-items: center;
   }
 
   span {
@@ -80,7 +80,7 @@ export const Singlejob = styled.div`
   background: #fcfcfc;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.2rem;
   background: #fcfcfc;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
@@ -180,22 +180,24 @@ export const DateTime = styled.div`
   }
 `
 
-export const Table = styled.table`
-  border: 1px solid #eaeaea;
-  border-radius: 4px;
-  text-align: center;
-  color: #211c28b2;
-
-  th {
-    background: #f5f5f5;
-  }
-
-  ,
-  td,
-  th,
-  tr {
-    border-collapse: collapse;
-    font-size: 1.3rem;
+export const Table = styled.div`
+  table {
+    width: 100%;
     border: 1px solid #eaeaea;
+    border-radius: 4px;
+    text-align: center;
+    color: #211c28b2;
+
+    th {
+      background: #f5f5f5;
+    }
+
+    td,
+    th,
+    tr {
+      border-collapse: collapse;
+      font-size: 1.3rem;
+      border: 1px solid #eaeaea;
+    }
   }
 `
