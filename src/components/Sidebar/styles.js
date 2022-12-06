@@ -61,19 +61,19 @@ export const SidebarButton = styled.button`
 export const Divider = styled.div`
   height: 1px;
   width: 100%;
-  background: ${lightTheme.bg4};
+  background: ${lightTheme.bgAlpha};
   margin: ${v.lgSpace} 0;
 `
 
 export const LinkContainer = styled.div`
   ${smooth};
   background: ${({ theme, isActive }) =>
-    !isActive ? `transparent` : theme.bg4};
+    !isActive ? `transparent` : theme.bg2};
   border-radius: ${v.borderRadius};
   margin: 8px 0;
 
   :hover {
-    box-shadow: inset 0 0 0 1px ${lightTheme.bg4};
+    box-shadow: inset 0 0 0 1px ${lightTheme.bg2};
   }
 `
 
@@ -97,14 +97,14 @@ export const LinkIcon = styled.div`
   svg {
     height: 20px;
     width: 20px;
-    fill: ${({ isActive }) => (!isActive ? `#0072bc` : `#fff`)};
+    fill: ${({ isActive }) => (!isActive ? '#ffffff' : `#0072bc`)};
   }
 `
 
 export const LinkLabel = styled.span`
   display: block;
   flex: 1;
-  color: ${({ isActive }) => (!isActive ? '#0072bc' : `#ffffff`)};
+  color: ${({ isActive }) => (!isActive ? '#ffffff' : `#0072bc`)};
   width: max-content;
   margin-left: ${v.smSpace};
 `
