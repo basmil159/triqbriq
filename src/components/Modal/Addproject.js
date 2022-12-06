@@ -21,19 +21,26 @@ import {
 
 const Addproject = (props) => {
   const materials = [
-    { name: 'Briq 30', img: briqs, qty: 5 },
+    { name: 'Briq 30', img: briqs, qty: 0 },
     { name: 'Briq 30', img: briqs, qty: 10 },
     { name: 'Briq 30', img: briqs, qty: 15 },
   ]
-  var a = []
-  materials.map((material, index) => a.push(material.qty))
-  const [materialQty, setMaterialQty] = useState(a)
-  var newArr = materialQty
 
-  const addSubtract = (index, value) => {
+  let arr = [] // array to store quantity of the material
+  materials.map((material, index) => arr.push(material.qty)) //pushing the quantity of material serially on empty arry
+  const [materialQty, setMaterialQty] = useState(arr) // desclaring state to store the changes on quantity of material
+  var newArr = [...materialQty] // storing material quantity arry to new variable for increasing or decreasing the specific material quantity
+
+  // handel changes on quantity of material
+  const handleChanges = (index, value) => {
+    // this conditional doesnot let the quantity to be less than zero
+    if (!newArr[index] && value === -1) {
+      return
+    }
+
+    // increasing or decreasing the quantity of material
     newArr[index] = newArr[index] + value
-    setMaterialQty(newArr)
-    console.log(materialQty[index])
+    setMaterialQty(() => newArr)
   }
   return (
     <ModalWrapper>
@@ -64,11 +71,11 @@ const Addproject = (props) => {
               </div>
               <div className='materialQuantity'>
                 <span>Qty</span>
-                <MaterialBtn onClick={() => addSubtract(index, -1)}>
+                <MaterialBtn onClick={() => handleChanges(index, -1)}>
                   -
                 </MaterialBtn>
                 <span>{materialQty[index]}</span>
-                <MaterialBtn onClick={() => addSubtract(index, 1)}>
+                <MaterialBtn onClick={() => handleChanges(index, 1)}>
                   +
                 </MaterialBtn>
               </div>
