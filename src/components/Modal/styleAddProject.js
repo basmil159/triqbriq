@@ -33,8 +33,7 @@ export const MaterialDiv = styled.div`
     align-items: center;
     gap: 1.6rem;
 
-    span,
-    button {
+    span {
       font-weight: 400;
       font-size: 1.6rem;
       font-family: 'inter';
@@ -42,7 +41,12 @@ export const MaterialDiv = styled.div`
       padding: 0;
     }
   }
+
   img {
     height: 100%;
   }
+`
+export const MaterialBtn = styled.span`
+  cursor: pointer;
+  user-select: none;
 `

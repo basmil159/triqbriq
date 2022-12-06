@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useState } from 'react'
 import { Heading3, Heading2 } from '../../styles/typography'
 import { IconSvg } from '../../assets/styles'
 import { crossSVG } from '../../assets'
@@ -12,9 +12,29 @@ import {
   ModelAddEdit,
 } from './style'
 import React from 'react'
-import { FormSection, MaterialDiv, MaterialsDiv } from './styleAddProject'
+import {
+  FormSection,
+  MaterialBtn,
+  MaterialDiv,
+  MaterialsDiv,
+} from './styleAddProject'
 
 const Addproject = (props) => {
+  const materials = [
+    { name: 'Briq 30', img: briqs, qty: 5 },
+    { name: 'Briq 30', img: briqs, qty: 10 },
+    { name: 'Briq 30', img: briqs, qty: 15 },
+  ]
+  var a = []
+  materials.map((material, index) => a.push(material.qty))
+  const [materialQty, setMaterialQty] = useState(a)
+  var newArr = materialQty
+
+  const addSubtract = (index, value) => {
+    newArr[index] = newArr[index] + value
+    setMaterialQty(newArr)
+    console.log(materialQty[index])
+  }
   return (
     <ModalWrapper>
       <ModalTitle>
@@ -36,54 +56,24 @@ const Addproject = (props) => {
           <input type='text' />
         </FormSection>
         <MaterialsDiv>
-          <MaterialDiv>
-            <div className='materials'>
-              <img src={briqs} alt='' />
-              <Heading2 fontWeight='600'> BRIQ 30 </Heading2>
-            </div>
-            <div className='materialQuantity'>
-              <span>Qty</span>
-              <button>-</button>
-              <span>10</span>
-              <button>+</button>
-            </div>
-          </MaterialDiv>
-          <MaterialDiv>
-            <div className='materials'>
-              <img src={briqs} alt='' />
-              <Heading2 fontWeight='600'> BRIQ 30 </Heading2>
-            </div>
-            <div className='materialQuantity'>
-              <span>Qty</span>
-              <button>-</button>
-              <span>10</span>
-              <button>+</button>
-            </div>
-          </MaterialDiv>
-          <MaterialDiv>
-            <div className='materials'>
-              <img src={briqs} alt='' />
-              <Heading2 fontWeight='600'> BRIQ 30 </Heading2>
-            </div>
-            <div className='materialQuantity'>
-              <span>Qty</span>
-              <button>-</button>
-              <span>10</span>
-              <button>+</button>
-            </div>
-          </MaterialDiv>
-          <MaterialDiv>
-            <div className='materials'>
-              <img src={briqs} alt='' />
-              <Heading2 fontWeight='600'> BRIQ 30 </Heading2>
-            </div>
-            <div className='materialQuantity'>
-              <span>Qty</span>
-              <button>-</button>
-              <span>10</span>
-              <button>+</button>
-            </div>
-          </MaterialDiv>
+          {materials.map((material, index) => (
+            <MaterialDiv>
+              <div className='materials'>
+                <img src={material.img} alt='' />
+                <Heading2 fontWeight='600'> {material.name} </Heading2>
+              </div>
+              <div className='materialQuantity'>
+                <span>Qty</span>
+                <MaterialBtn onClick={() => addSubtract(index, -1)}>
+                  -
+                </MaterialBtn>
+                <span>{materialQty[index]}</span>
+                <MaterialBtn onClick={() => addSubtract(index, 1)}>
+                  +
+                </MaterialBtn>
+              </div>
+            </MaterialDiv>
+          ))}
         </MaterialsDiv>
         <ModalFooter>
           <ModelCancel onClick={() => props.close('')}>Cancel</ModelCancel>

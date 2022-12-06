@@ -88,7 +88,7 @@ const Sidebar = () => {
             }}
           >
             <Links
-              to='/triqbriq'
+              to='/triqbriq/'
               style={
                 !sidebarOpen
                   ? { width: `100%`, justifyContent: 'center' }
